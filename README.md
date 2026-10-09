@@ -1,4 +1,4 @@
-# api-lifecycle-devops
+# Api-lifecycle-devops
 A complete CI/CD pipeline that automatically validates the OpenAPI specification, performs linting, executes tests, runs security checks, and builds the application. Upon successful validation, the API specification will be automatically deployed to Azure API Management (APIM).
 
 This project implements an API-first REST service called OpenWeather API using the OpenAPI Specification. The repository will contain the API definition, source code, automated tests, infrastructure-as-code templates, and GitHub Actions workflows.
