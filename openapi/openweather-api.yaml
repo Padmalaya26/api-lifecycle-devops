@@ -1,0 +1,84 @@
+openapi: 3.0.3
+
+info:
+  title: OpenWeather API
+  description: Demo API for DevOps Project
+  version: 1.0.0
+
+  contact:
+    name: Moharana
+    email: moharana@kth.se
+
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+tags:
+  - name: Weather
+    description: Weather operations
+
+servers:
+  - url: http://localhost:3000
+#  - url: https://openweather-apim.azure-api.net
+
+paths:
+  /weather/{city}:
+
+    get:
+
+      tags:
+        - Weather
+
+      operationId: getWeather
+
+      summary: Get weather by city
+
+      description: Returns weather information for the specified city.
+
+      security: []
+
+      parameters:
+
+        - in: path
+          name: city
+
+          required: true
+
+          schema:
+            type: string
+
+      responses:
+
+        '200':
+          description: Weather details
+
+          content:
+            application/json:
+
+              schema:
+                $ref: '#/components/schemas/Weather'
+
+        '400':
+          description: Bad request
+
+        '404':
+          description: City not found
+
+components:
+
+  schemas:
+
+    Weather:
+
+      type: object
+
+      properties:
+
+        city:
+          type: string
+
+        temperature:
+          type: integer
+
+        condition:
+          type: string

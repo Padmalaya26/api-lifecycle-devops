@@ -1,0 +1,32 @@
+name: Deploy OpenAPI to APIM
+
+on:
+  push:
+    branches:
+      - 2026
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Import API into APIM
+
+        run: |
+          az apim api import \
+            --resource-group rg-openweather-api-padmalaya26 \
+            --service-name openweather-apim-devops \
+            --api-id openweather-api \
+            --path weather \
+            --specification-format OpenApi \
+            --specification-path openapi/openweather-api.yaml
