@@ -3,7 +3,7 @@ name: Deploy OpenAPI to APIM
 on:
   push:
     branches:
-      - 2026
+      - main
 
 jobs:
   deploy:

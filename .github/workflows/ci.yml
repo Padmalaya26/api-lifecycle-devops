@@ -3,7 +3,7 @@ name: OpenWeather API CI
 on:
   push:
     branches:
-      - 2026
+      - main
 
   pull_request:
     branches:
