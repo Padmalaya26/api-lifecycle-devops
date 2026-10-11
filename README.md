@@ -79,7 +79,7 @@ Azure API Management Service
 
 **GitHub Repository**
 
-**Repository:**: https://github.com/Padmalaya26/api-lifecycle-devops
+**Repository:** https://github.com/Padmalaya26/api-lifecycle-devops
 
 **GitHub Actions Pipeline**
 
