@@ -1,4 +1,4 @@
-name: OpenWeather API CI
+name: API CI workflow
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - main
-      
+
   workflow_dispatch:
 
 jobs:
