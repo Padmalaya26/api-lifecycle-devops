@@ -95,7 +95,7 @@ Azure API Management Service
 **GitHub Actions Pipeline Run**
 The Actions tab provides visibility into all CI/CD piepline executions, validation results, test reports, security scans, and deployment status. Links are below.
 
-- **CodeQl Security Scan run Report:**:
+- **CodeQl Security Scan run Report:**
     https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068923
     
 - **CI Pipeline Run Report:** https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068792
