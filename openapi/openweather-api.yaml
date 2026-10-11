@@ -1,7 +1,7 @@
 openapi: 3.0.3
 
 info:
-  title: OpenWeather API updated
+  title: OpenWeather API
   description: Demo API for DevOps Project
   version: 1.0.0
 
