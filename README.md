@@ -98,7 +98,7 @@ The Actions tab provides visibility into all CI/CD piepline executions, validati
 - **CodeQl Security Scan run Report:**:
     https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068923
     
-- **CI Pipeline Run Report:**: https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068792
+- **CI Pipeline Run Report:** https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068792
     
 - **CD Pipeline Run Report:** https://github.com/Padmalaya26/api-lifecycle-devops/actions/runs/37990068662
     
