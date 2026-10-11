@@ -1,4 +1,4 @@
-name: API CI workflow CodeQL Security Scan Workflow
+name: API CodeQL Security Scan Workflow
 
 on:
   push:
