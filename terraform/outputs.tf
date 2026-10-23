@@ -12,3 +12,6 @@ output "gateway_url" {
 
   value = azurerm_api_management.apim.gateway_url
 }
+output "webapp_url" {
+  value = "https://${azurerm_linux_web_app.webapp.default_hostname}"
+}

@@ -1,17 +1,18 @@
-name: API CD workflow to APIM
+name: Deploy OpenWeather API
 
 on:
   push:
     branches:
       - main
 
-  pull_request:
-    branches:
-      - main  
+			   
+			 
+			  
 
   workflow_dispatch:
 
 jobs:
+
   deploy:
 
     runs-on: ubuntu-latest
@@ -21,13 +22,31 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Unit Tests
+        run: npm test
+
       - name: Azure Login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Import API into APIM
+      # NEW STEP
+      - name: Deploy Node.js App to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          package: .
 
+      # EXISTING APIM DEPLOYMENT
+      - name: Import API into APIM
         run: |
           az apim api import \
             --resource-group rg-openweather-api-padmalaya26 \
@@ -36,3 +55,12 @@ jobs:
             --path weather \
             --specification-format OpenApi \
             --specification-path openapi/openweather-api.yaml
+
+      # OPTIONAL: Configure backend service
+      - name: Configure APIM Backend
+        run: |
+          az apim api update \
+            --resource-group rg-openweather-api-padmalaya26 \
+            --service-name openweather-apim-devops \
+            --api-id openweather-api \
+            --set serviceUrl=https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net
