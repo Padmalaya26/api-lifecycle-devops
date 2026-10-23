@@ -1,15 +1,11 @@
-name: API CodeQL Security Scan Workflow
+name: CodeQL Security Scan
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - main
-
-  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - OpenWeather API CI
+    types:
+      - completed
 
 
 jobs:

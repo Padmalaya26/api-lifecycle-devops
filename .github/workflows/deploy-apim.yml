@@ -1,15 +1,11 @@
 name: Deploy OpenWeather API
 
 on:
-  push:
-    branches:
-      - main
-
-			   
-			 
-			  
-
-  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - CodeQL Security Scan
+    types:
+      - completed
 
 jobs:
 

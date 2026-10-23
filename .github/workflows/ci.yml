@@ -1,15 +1,11 @@
-name: API CI workflow
+name: OpenWeather API CI
 
 on:
+  workflow_dispatch:
+
   push:
     branches:
       - main
-
-  pull_request:
-    branches:
-      - main
-
-  workflow_dispatch:
 
 jobs:
   validate-build-test:
