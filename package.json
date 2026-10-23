@@ -20,7 +20,7 @@
 
   "devDependencies": {
     "@stoplight/spectral-cli": "^6.11.1",
-    "@redocly/cli": "^1.18.0",
+    "@redocly/cli": "^2.65.1",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   }
